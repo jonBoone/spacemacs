@@ -1,4 +1,7 @@
 ;;; init.el --- Spacemacs Initialization File -*- no-byte-compile: t; lexical-binding: nil; -*-
+;; -------------------------------------------------------------------------
+;; * Startup Speed Tweaks
+;; -------------------------------------------------------------------------
 ;;
 ;; Copyright (c) 2012-2025 Sylvain Benner & Contributors
 ;;
@@ -61,6 +64,12 @@
   (error (concat "Your version of Emacs (%s) is too old. "
                  "Spacemacs requires Emacs version %s or above.")
          emacs-version spacemacs-emacs-min-version))
+
+
+;;--------------------------------------------------------------------------
+;; * prevent the following from being native-jit-compiled
+;;--------------------------------------------------------------------------
+(setq native-comp-jit-compilation-deny-list '("multi-term" "multi-vterm" "vterm"))
 
 ;; -------------------------------------------------------------------------
 ;; * Startup Speed Tweaks
